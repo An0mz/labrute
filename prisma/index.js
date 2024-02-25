@@ -648,7 +648,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\perso\\Documents\\GitHub\\labrute\\prisma",
+      "value": "C:\\Users\\bilgr\\source\\repos\\labrute\\prisma",
       "fromEnvVar": null
     },
     "config": {

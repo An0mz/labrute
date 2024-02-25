@@ -59,6 +59,7 @@ const Server = {
     reset: (name: string) => Fetch<HookBrute>(`/api/brute/${name}/reset`),
     resetVisuals: (name: string, body: Prisma.BruteBodyCreateWithoutBruteInput, colors: Prisma.BruteColorsCreateWithoutBruteInput) => Fetch<never>(`/api/brute/${name}/reset-visuals`, { body, colors }, 'POST'),
     giveFreeVisualReset: (name: string) => Fetch<never>(`/api/brute/${name}/give-free-visual-reset`),
+    getPupils: (name: string) => Fetch<Array<BruteWithBodyColors>>(`/api/brute/${name}/pupils`),
   },
   Log: {
     list: (brute: string) => Fetch<(Log & { currentBrute: { name: string } })[]>(`/api/log/list/${brute}`),
@@ -123,7 +124,7 @@ const Server = {
     unpinThread: (brute: string, id: number, threadId: number) => Fetch<never>(`/api/brute/${brute}/clan/${id}/thread/${threadId}/unpin`),
     getThread: (brute: string, id: number, threadId: number, page: number) => Fetch<ClanGetThreadResponse>(`/api/brute/${brute}/clan/${id}/thread/${threadId}`, { page }),
     challengeBoss: (brute: string, id: number) => Fetch<{ id: number }>(`/api/brute/${brute}/clan/${id}/challenge-boss`),
-  }
+  },
 };
 
 export default Server;

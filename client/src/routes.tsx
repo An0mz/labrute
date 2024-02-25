@@ -30,6 +30,7 @@ import GlobalTournamentView from './views/GlobalTournamentView';
 import ResetVisualsView from './views/ResetVisualsView';
 import UserView from './views/UserView';
 import AchievementRankingView from './views/AchievementRankingView';
+import PupilsView from './views/PupilsView';
 
 const routes: RouteObject[] = [
   {
@@ -64,6 +65,8 @@ const routes: RouteObject[] = [
           { path: 'tournaments', element: <TournamentHistoryView /> },
           { path: 'achievements', element: <AchievementsView /> },
           { path: 'reset-visuals', element: <ResetVisualsView /> },
+          { path: '/:bruteName/pupils', element: <PupilsView /> },
+          { path: 'pupils', element: <PupilsView /> },
           {
             path: 'clan',
             element: <ProvideBrute />,
