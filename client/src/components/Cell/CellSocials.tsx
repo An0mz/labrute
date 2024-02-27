@@ -75,9 +75,8 @@ const CellSocials = ({
           </Box>
           {!!brute.pupilsCount && (
             <Box>
-              <Text bold color="secondary" component="span">{t('pupils')}: </Text>
-              {/* Wrap the pupils count inside a Link */}
               <Link to={`/${brute.name}/pupils`}>
+                <Text bold color="secondary" component="span">{t('pupils')}: </Text>
                 <Text bold component="span">{brute.pupilsCount}</Text>
               </Link>
             </Box>

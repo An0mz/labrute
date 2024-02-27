@@ -117,6 +117,9 @@ const AdminView = () => {
       colors: {
         update: colors,
       },
+      pupils: {
+        updateMany: [],
+      },
     }).then(() => {
       Alert.open('success', 'Brute saved');
     }).catch(catchError(Alert));

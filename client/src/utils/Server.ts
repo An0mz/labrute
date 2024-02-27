@@ -1,4 +1,4 @@
-import { AchievementGetRankingsResponse, AdminPanelBrute, BruteReportsListResponse, BrutesCreateResponse, BrutesExistsResponse, BrutesGetDestinyResponse, BrutesGetFightsLeftResponse, BrutesGetForRankResponse, BrutesGetOpponentsResponse, BrutesGetRankingResponse, BruteWithBodyColors, ClanCreateResponse, ClanGetResponse, ClanGetThreadResponse, ClanGetThreadsResponse, ClanListResponse, FullTournament, HookBrute, ServerReadyResponse, TournamentHistoryResponse, TournamentsGetGlobalResponse, UserGetAdminResponse, UserGetProfileResponse, UsersAdminUpdateRequest, UserWithBrutesBodyColor } from '@labrute/core';
+import { AchievementGetRankingsResponse, AdminPanelBrute, BrutePupils, BruteReportsListResponse, BrutesCreateResponse, BrutesExistsResponse, BrutesGetDestinyResponse, BrutesGetFightsLeftResponse, BrutesGetForRankResponse, BrutesGetOpponentsResponse, BrutesGetRankingResponse, BruteWithBodyColors, ClanCreateResponse, ClanGetResponse, ClanGetThreadResponse, ClanGetThreadsResponse, ClanListResponse, FullTournament, HookBrute, ServerReadyResponse, TournamentHistoryResponse, TournamentsGetGlobalResponse, UserGetAdminResponse, UserGetProfileResponse, UsersAdminUpdateRequest, UserWithBrutesBodyColor } from '@labrute/core';
 import { Achievement, Brute, BruteReportReason, BruteReportStatus, DestinyChoice, DestinyChoiceSide, Fight, Gender, Lang, Log, Prisma } from '@labrute/prisma';
 import Fetch from './Fetch';
 
@@ -59,7 +59,7 @@ const Server = {
     reset: (name: string) => Fetch<HookBrute>(`/api/brute/${name}/reset`),
     resetVisuals: (name: string, body: Prisma.BruteBodyCreateWithoutBruteInput, colors: Prisma.BruteColorsCreateWithoutBruteInput) => Fetch<never>(`/api/brute/${name}/reset-visuals`, { body, colors }, 'POST'),
     giveFreeVisualReset: (name: string) => Fetch<never>(`/api/brute/${name}/give-free-visual-reset`),
-    getPupils: (name: string) => Fetch<Array<BruteWithBodyColors>>(`/api/brute/${name}/pupils`),
+    getPupils: (name: string) => Fetch<BrutePupils>(`/api/brute/${name}/pupils`),
   },
   Log: {
     list: (brute: string) => Fetch<(Log & { currentBrute: { name: string } })[]>(`/api/log/list/${brute}`),

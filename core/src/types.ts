@@ -386,11 +386,17 @@ export type FightWithBrutes = Fight & {
 // Brute report
 export type BruteReportWithNames = BruteReport & {
   brute: {
-    id: number;
-    name: string;
   },
   users: {
     id: string;
     name: string;
   }[],
 };
+
+export interface BrutePupils {
+  bruteId: number;
+  pupils: {
+    id: number;
+    name: string;
+  }[];
+}
