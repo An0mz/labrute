@@ -392,11 +392,3 @@ export type BruteReportWithNames = BruteReport & {
     name: string;
   }[],
 };
-
-export interface BrutePupils {
-  bruteId: number;
-  pupils: {
-    id: number;
-    name: string;
-  }[];
-}

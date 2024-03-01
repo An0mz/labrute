@@ -3,11 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { Paper, Table, TableCell, TableContainer, TableHead, TableRow, TableBody } from '@mui/material';
 import Page from '../components/Page';
 import Text from '../components/Text';
-import { usePupils } from '../hooks/usePupils';
 
 const PupilsView = () => {
   const { t } = useTranslation();
-  const { pupils } = usePupils();
+  const pupils = [
+    { id: 1, name: 'Pupil 1' },
+    { id: 2, name: 'Pupil 2' },
+    { id: 3, name: 'Pupil 3' },
+  ];
 
   return (
     <Page title={t('MyBrute')} headerUrl="/">
